@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">QRExpireCheck</string>
+    <string name="home">Home</string>
+    <string name="food">Food</string>
 </resources>
