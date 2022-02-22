@@ -27,7 +27,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding, SplashViewModel>() {
         super.onViewCreated(view, savedInstanceState)
         if (savedInstanceState == null)
             CoroutineScope(Dispatchers.IO).launch {
-                delay(3000)
+                viewModel.checkToGenerateData()
                 CoroutineScope(Dispatchers.Main).launch {
                     replaceFragment(HomeFragment(), isAddBackStack = false)
                 }

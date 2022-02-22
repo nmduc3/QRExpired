@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.example.myapplication.databinding.FragmentContainerBinding
 import com.example.myapplication.main.base.BaseFragment
 import com.example.myapplication.main.base.BaseViewModel
@@ -14,7 +15,7 @@ import com.example.myapplication.main.splash.SplashFragment
  */
 class ContainerFragment : BaseFragment<FragmentContainerBinding, BaseViewModel>() {
 
-    override val viewModel: BaseViewModel = BaseViewModel()
+    override val viewModel by viewModels<BaseViewModel>()
 
     override fun getBinding(): (LayoutInflater, ViewGroup?, Boolean) -> FragmentContainerBinding? =
         FragmentContainerBinding::inflate
