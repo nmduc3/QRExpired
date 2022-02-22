@@ -2,6 +2,7 @@ package com.example.myapplication.main.common
 
 class Constants {
     object DefaultValue {
+        const val TIME_DELAY_DEFAULT = 1500L
         const val DB_NAME = "QR_FOOD_DB"
         val DEFAULT_ALIAS = listOf(
             "YQ",
