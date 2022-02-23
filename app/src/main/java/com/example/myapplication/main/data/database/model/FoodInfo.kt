@@ -10,6 +10,9 @@ class FoodInfo(
     @ColumnInfo(name = "id")
     var id: Int = 0,
 
+    @ColumnInfo(name = "name")
+    var name: String = "",
+
     @ColumnInfo(name = "folder_id")
     var folderId: String = "",
 
@@ -18,4 +21,8 @@ class FoodInfo(
 
     @ColumnInfo(name = "date_start")
     var dateStart: String = ""
-)
+) {
+    fun getDateExpired(): String {
+        return "TODO"
+    }
+}

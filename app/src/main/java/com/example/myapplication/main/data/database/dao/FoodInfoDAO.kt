@@ -18,4 +18,7 @@ interface FoodInfoDAO {
 
     @Query("SELECT * FROM food_info")
     fun getAllLD(): LiveData<List<FoodInfo>>
+
+    @Query("""SELECT * FROM food_info WHERE folder_id = :folderId""")
+    fun getAllByFolderIdLD(folderId: String?): LiveData<List<FoodInfo>>
 }

@@ -2,4 +2,6 @@
     <string name="app_name">QRExpireCheck</string>
     <string name="home">Home</string>
     <string name="food">Food</string>
+    <string name="start_date">Start Date</string>
+    <string name="expired_date">Expired Date</string>
 </resources>

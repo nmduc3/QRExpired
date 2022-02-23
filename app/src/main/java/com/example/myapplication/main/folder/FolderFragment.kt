@@ -1,38 +1,53 @@
-package com.example.myapplication.main.home
+package com.example.myapplication.main.folder
 
 import android.graphics.Rect
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.databinding.FragmentHomeBinding
+import com.example.myapplication.databinding.FragmentFolderBinding
 import com.example.myapplication.main.base.BaseFragment
+import com.example.myapplication.main.data.database.model.Folder
 import com.example.myapplication.main.extension.disableMultipleClick
 import com.example.myapplication.main.extension.toPx
-import com.example.myapplication.main.folder.FolderFragment
 
-class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
-    override fun getBinding(): (LayoutInflater, ViewGroup?, Boolean) -> FragmentHomeBinding? =
-        FragmentHomeBinding::inflate
+class FolderFragment : BaseFragment<FragmentFolderBinding, FolderViewModel>() {
+    companion object {
+        private const val KEY_DATA = "key_data"
 
-    override val viewModel by viewModels<HomeViewModel>()
+        fun newInstance(folder: Folder): FolderFragment = FolderFragment().apply {
+            arguments = Bundle().apply {
+                putParcelable(KEY_DATA, folder)
+            }
+        }
+    }
 
-    private val adapter = FolderAdapter()
+    override fun getBinding(): (LayoutInflater, ViewGroup?, Boolean) -> FragmentFolderBinding? =
+        FragmentFolderBinding::inflate
+
+    override val viewModel by viewModels<FolderViewModel>()
+
+    private val adapter = FoodAdapter()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel.folder = arguments?.getParcelable(KEY_DATA)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
         initListeners()
-        initObserver()
+        initObservers()
     }
 
     private fun initViews() {
         binding?.run {
-            rvFolders.let {
+            tvTitle.text = viewModel.folder?.name
+            rvFood.let {
                 it.layoutManager = LinearLayoutManager(context)
                 it.adapter = adapter
                 it.addItemDecoration(object : RecyclerView.ItemDecoration() {
@@ -48,18 +63,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     }
 
     private fun initListeners() {
-        adapter.onItemCLick = {
-            replaceFragment(FolderFragment.newInstance(it))
-        }
         binding?.run {
-            imgQRScan.disableMultipleClick {
-                Log.d("okMAPPP", "QRScan")
+            imgBack.disableMultipleClick {
+                handleBackPressed()
             }
         }
     }
 
-    private fun initObserver() {
-        viewModel.getALLFoldersLiveData().observe(viewLifecycleOwner) {
+    private fun initObservers() {
+        viewModel.getAllFoodLD().observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
     }

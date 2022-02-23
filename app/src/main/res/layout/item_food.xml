@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp"
+    android:background="@drawable/bg_pink_10r">
+
+    <TextView
+        android:id="@+id/tvName"
+        style="@style/BasicText"
+        android:layout_width="0dp"
+        android:layout_margin="10dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Name : Apple" />
+
+    <TextView
+        android:id="@+id/tvId"
+        style="@style/BasicText"
+        android:layout_width="0dp"
+        android:layout_margin="10dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        tools:text="Id: P3Mzd2w+WyQ=" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glCenterVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/tvDateStartLabel"
+        style="@style/BasicText"
+        android:layout_width="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/start_date"
+        app:layout_constraintEnd_toEndOf="@id/glCenterVertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvId" />
+
+    <TextView
+        android:id="@+id/tvDateExpiredLabel"
+        style="@style/BasicText"
+        android:layout_width="0dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/expired_date"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvDateStartLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/glCenterVertical" />
+
+    <TextView
+        android:id="@+id/tvDateStart"
+        style="@style/BasicText"
+        android:layout_width="0dp"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="@id/glCenterVertical"
+        app:layout_constraintStart_toStartOf="@id/tvDateStartLabel"
+        app:layout_constraintTop_toBottomOf="@id/tvDateStartLabel"
+        tools:text="22/02/2022 13:23" />
+
+    <TextView
+        android:id="@+id/tvDateExpired"
+        style="@style/BasicText"
+        android:layout_width="0dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/glCenterVertical"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvDateStart"
+        tools:text="25/02/2022 13:23" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
