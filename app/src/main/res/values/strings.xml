@@ -10,4 +10,8 @@
     <string name="qr_code_invalid">Qr code invalid</string>
     <string name="enter_name_of_food">Enter name of food</string>
     <string name="save">Save</string>
+    <string name="add_folder">Add Folder</string>
+    <string name="enter_new_folder_id">Enter new folder Id</string>
+    <string name="enter_new_folder_name">Enter new folder name</string>
+    <string name="this_id_already_exists">This id already exists</string>
 </resources>

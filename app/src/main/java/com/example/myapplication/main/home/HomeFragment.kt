@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentHomeBinding
+import com.example.myapplication.main.add.AddFolderFragment
 import com.example.myapplication.main.base.BaseFragment
 import com.example.myapplication.main.common.Constants
 import com.example.myapplication.main.extension.disableMultipleClick
@@ -84,6 +85,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(),
         binding?.run {
             imgQRScan.disableMultipleClick {
                 handleOpenCamera()
+            }
+            btnAdd.disableMultipleClick {
+                replaceFragment(AddFolderFragment())
             }
         }
     }
