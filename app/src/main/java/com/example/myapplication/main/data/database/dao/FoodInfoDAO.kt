@@ -11,7 +11,7 @@ import com.example.myapplication.main.data.database.model.FoodInfo
 @Dao
 interface FoodInfoDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertFolders(vararg folder: FoodInfo)
+    fun insertFoods(vararg folder: FoodInfo)
 
     @Query("SELECT * FROM food_info")
     fun getAll(): List<FoodInfo>

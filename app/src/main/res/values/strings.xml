@@ -4,4 +4,10 @@
     <string name="food">Food</string>
     <string name="start_date">Start Date</string>
     <string name="expired_date">Expired Date</string>
+    <string name="qr_scan">QR Scan</string>
+    <string name="camera_rationale">We need camera permission to continue</string>
+    <string name="result">Result</string>
+    <string name="qr_code_invalid">Qr code invalid</string>
+    <string name="enter_name_of_food">Enter name of food</string>
+    <string name="save">Save</string>
 </resources>

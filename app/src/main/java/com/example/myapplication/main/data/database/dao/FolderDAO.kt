@@ -17,4 +17,7 @@ interface FolderDAO {
 
     @Query("SELECT * FROM folder")
     fun getAllLD(): LiveData<List<Folder>>
+
+    @Query("SELECT * FROM folder WHERE id = :folderId")
+    fun getFolderById(folderId: String): Folder
 }

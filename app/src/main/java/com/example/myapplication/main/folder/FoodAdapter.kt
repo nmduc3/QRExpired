@@ -1,5 +1,6 @@
 package com.example.myapplication.main.folder
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -27,11 +28,12 @@ class FoodAdapter : ListAdapter<FoodInfo, FoodAdapter.ItemVH>(FoodInfoDiffCallba
     inner class ItemVH(private val view: ItemFoodBinding) :
         RecyclerView.ViewHolder(view.root) {
 
+        @SuppressLint("SetTextI18n")
         fun bind(position: Int) {
             view.run {
                 getItem(position).let {
                     tvName.text = it.name
-                    tvId.text = it.foodId
+                    tvId.text = "ID: ${it.foodId}"
                     tvDateStart.text = it.dateStart
                     tvDateExpired.text = it.getDateExpired()
                 }
@@ -41,11 +43,10 @@ class FoodAdapter : ListAdapter<FoodInfo, FoodAdapter.ItemVH>(FoodInfoDiffCallba
 
     class FoodInfoDiffCallback : DiffUtil.ItemCallback<FoodInfo>() {
         override fun areItemsTheSame(oldItem: FoodInfo, newItem: FoodInfo): Boolean =
-            oldItem.id == newItem.id
+            oldItem.foodId == newItem.foodId
 
         override fun areContentsTheSame(oldItem: FoodInfo, newItem: FoodInfo): Boolean =
             oldItem.name == newItem.name &&
-                    oldItem.foodId == newItem.foodId &&
                     oldItem.dateStart == newItem.dateStart
     }
 }

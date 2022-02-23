@@ -140,7 +140,7 @@ abstract class BaseFragment<V : ViewBinding, VM : BaseViewModel> : Fragment() {
                     R.anim.slide_out_right
                 )
             }
-            add(R.id.container, fragment, fragment.javaClass.name)
+            replace(R.id.container, fragment, fragment.javaClass.name)
             if (isAddBackStack) {
                 addToBackStack(tagNameBackStack)
             }

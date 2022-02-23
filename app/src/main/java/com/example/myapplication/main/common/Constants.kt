@@ -1,6 +1,10 @@
 package com.example.myapplication.main.common
 
 class Constants {
+    object TagName {
+        const val HOME = "HOME_TAG"
+    }
+
     object DefaultValue {
         const val TIME_DELAY_DEFAULT = 1500L
         const val DB_NAME = "QR_FOOD_DB"
