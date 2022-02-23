@@ -4,7 +4,10 @@ import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.example.myapplication.main.extension.toCalendar
+import com.example.myapplication.main.extension.toStringEx
 import kotlinx.parcelize.Parcelize
+import java.util.*
 
 @Entity(tableName = "food_info")
 @Parcelize
@@ -21,8 +24,16 @@ class FoodInfo(
 
     @ColumnInfo(name = "date_start")
     var dateStart: String = ""
-): Parcelable {
-    fun getDateExpired(): String {
-        return "TODO"
+) : Parcelable {
+    fun getDateExpiredInString(): String {
+        val calendar = dateStart.toCalendar()
+        calendar.add(Calendar.DATE, 3)
+        return calendar.toStringEx()
+    }
+
+    fun getDateExpired(): Calendar {
+        val calendar = dateStart.toCalendar()
+        calendar.add(Calendar.DATE, 3)
+        return calendar
     }
 }

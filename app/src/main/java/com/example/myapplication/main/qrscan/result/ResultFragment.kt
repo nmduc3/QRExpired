@@ -74,7 +74,7 @@ class ResultFragment: BaseFragment<FragmentResultBinding, ResultViewModel>() {
                 layoutFoodPreview.let {
                     it.tvId.text = viewModel.foodInfo?.foodId
                     it.tvDateStart.text = viewModel.foodInfo?.dateStart
-                    it.tvDateExpired.text = viewModel.foodInfo?.getDateExpired()
+                    it.tvDateExpired.text = viewModel.foodInfo?.getDateExpiredInString()
                     viewModel.getFolderName()
                 }
             }

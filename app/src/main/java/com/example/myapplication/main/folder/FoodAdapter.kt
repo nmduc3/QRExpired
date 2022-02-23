@@ -35,7 +35,7 @@ class FoodAdapter : ListAdapter<FoodInfo, FoodAdapter.ItemVH>(FoodInfoDiffCallba
                     tvName.text = it.name
                     tvId.text = "ID: ${it.foodId}"
                     tvDateStart.text = it.dateStart
-                    tvDateExpired.text = it.getDateExpired()
+                    tvDateExpired.text = it.getDateExpiredInString()
                 }
             }
         }
