@@ -8,42 +8,9 @@ class Constants {
     object DefaultValue {
         const val TIME_DELAY_DEFAULT = 1500L
         const val DB_NAME = "QR_FOOD_DB"
-        val DEFAULT_ALIAS = listOf(
-            "YQ",
-            "Yg",
-            "Yw",
-            "ZA",
-            "ZQ",
-            "Zg",
-            "Zw",
-            "aA",
-            "aQ",
-            "ag",
-            "aw",
-            "bA",
-            "bQ",
-            "bg",
-            "bw",
-            "cA"
-        )
-        val DEFAULT_NAME = listOf(
-            "apple",
-            "pineapple",
-            "tomato",
-            "orange",
-            "banana",
-            "grapes",
-            "pear",
-            "kiwi",
-            "asparagus",
-            "avocado",
-            "beetroot",
-            "broccoli",
-            "brussels sprout",
-            "cabbage",
-            "carrot",
-            "potato"
-        )
+        const val TIME_DELAY = 3L // day
+        const val KEY_NAME = "key_name"
+        const val CHANNEL_ID = "QRFoodChannelId"
         val DEFAULT_FOLDER = hashMapOf(
             "YQ" to "apple",
             "Yg" to "pineapple",

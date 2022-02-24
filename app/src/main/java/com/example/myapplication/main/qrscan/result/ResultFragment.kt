@@ -5,12 +5,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.viewModels
+import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentResultBinding
 import com.example.myapplication.main.base.BaseFragment
 import com.example.myapplication.main.common.Constants
+import com.example.myapplication.main.common.EventObserver
 import com.example.myapplication.main.data.database.model.FoodInfo
 import com.example.myapplication.main.extension.disableMultipleClick
 import com.example.myapplication.main.extension.gone
@@ -103,8 +106,17 @@ class ResultFragment: BaseFragment<FragmentResultBinding, ResultViewModel>() {
 
     @SuppressLint("SetTextI18n")
     private fun initObservers() {
-        viewModel.folderNameLD().observe(viewLifecycleOwner) {
-            binding?.layoutFoodPreview?.tvId?.text = "${it.name} ID : ${viewModel.foodInfo?.foodId}"
+        viewModel.run {
+            folderNameLD().observe(viewLifecycleOwner) {
+                binding?.layoutFoodPreview?.tvId?.text = "${it.name} ID : ${viewModel.foodInfo?.foodId}"
+            }
+            expiredFoodLD().observe(viewLifecycleOwner, EventObserver { date ->
+                context?.let {
+                    AlertDialog.Builder(it)
+                        .setMessage(getString(R.string.alarm_fail, date))
+                        .show()
+                }
+            })
         }
     }
 
