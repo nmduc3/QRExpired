@@ -79,4 +79,8 @@ dependencies {
 
     // work manager
     implementation "androidx.work:work-runtime-ktx:2.7.1"
+
+    // firebase
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:29.1.0')
 }

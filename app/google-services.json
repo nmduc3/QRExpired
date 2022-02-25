@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "720830423262",
+    "firebase_url": "https://aleron-50789-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "aleron-50789",
+    "storage_bucket": "aleron-50789.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720830423262:android:063987d67eb9abcdd3624f",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "720830423262-vqfgi4s798m80jumq88kbt5au4l04msr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxGt7WOJQXyK40jwSgpe7OdOyNHi6GhjQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "720830423262-vqfgi4s798m80jumq88kbt5au4l04msr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
