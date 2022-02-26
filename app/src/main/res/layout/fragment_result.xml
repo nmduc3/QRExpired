@@ -58,6 +58,8 @@
         android:layout_height="wrap_content"
         android:hint="@string/enter_name_of_food"
         android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/blackOpacity50"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
